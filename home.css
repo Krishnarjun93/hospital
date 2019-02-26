@@ -1,0 +1,156 @@
+*{
+    text-align: center;
+    padding: 1px;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidenav {
+    width: 190px;
+    position: fixed;
+    z-index: 1;
+    top: 75px;
+    left: 0px;
+    background: white;
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 0px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color:red;
+  }
+  
+  .main {
+    margin-left: 140px; 
+    font-size: 28px; 
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  .row {
+    display: flex;
+  }
+  
+  
+  .left {
+    flex: 5%;
+    padding: 15px 1px;
+  }
+  
+  .left h2 {
+    padding-left: 8px;
+  }
+  
+  
+  .right {
+    flex: 65%;
+    padding: 15px;
+  }
+  
+  
+  
+  #myMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myMenu li a {
+    background-color: #f6f6f6;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+  
+  #myMenu li a:hover {
+    background-color: #eee;
+  }

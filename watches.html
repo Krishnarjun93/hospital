@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header" id="myHeader">
+  <h1>Image Grid</h1>
+  <p>Click on the buttons to change the grid view.</p>
+  <button class="btn" onclick="one()">1</button>
+  <button class="btn active" onclick="two()">2</button>
+  <button class="btn" onclick="four()">4</button>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <img src="/w3images/wedding.jpg" style="width:100%">
+    <img src="/w3images/rocks.jpg" style="width:100%">
+    <img src="/w3images/falls2.jpg" style="width:100%">
+    <img src="/w3images/paris.jpg" style="width:100%">
+    <img src="/w3images/nature.jpg" style="width:100%">
+    <img src="/w3images/mist.jpg" style="width:100%">
+    <img src="/w3images/paris.jpg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="/w3images/underwater.jpg" style="width:100%">
+    <img src="/w3images/ocean.jpg" style="width:100%">
+    <img src="/w3images/wedding.jpg" style="width:100%">
+    <img src="/w3images/mountainskies.jpg" style="width:100%">
+    <img src="/w3images/rocks.jpg" style="width:100%">
+    <img src="/w3images/underwater.jpg" style="width:100%">
+  </div>  
+  <div class="column">
+    <img src="/w3images/wedding.jpg" style="width:100%">
+    <img src="/w3images/rocks.jpg" style="width:100%">
+    <img src="/w3images/falls2.jpg" style="width:100%">
+    <img src="/w3images/paris.jpg" style="width:100%">
+    <img src="/w3images/nature.jpg" style="width:100%">
+    <img src="/w3images/mist.jpg" style="width:100%">
+    <img src="/w3images/paris.jpg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="/w3images/underwater.jpg" style="width:100%">
+    <img src="/w3images/ocean.jpg" style="width:100%">
+    <img src="/w3images/wedding.jpg" style="width:100%">
+    <img src="/w3images/mountainskies.jpg" style="width:100%">
+    <img src="/w3images/rocks.jpg" style="width:100%">
+    <img src="/w3images/underwater.jpg" style="width:100%">
+  </div>
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// Two images side by side
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// Four images side by side
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
+
+
+<!-- <html>
+    <head>
+        <title>WATCHES</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>WELCOME</h1>
+    
+<div class="tab">
+    <button class="tablinks" onclick="watchStraps(event, 'ChainStrap')">CHAIN STRAPS</button>
+    <button class="tablinks" onclick="watchStraps(event, 'LeatherStraps')">LEATHER STRAPS</button>
+    <button class="tablinks" onclick="watchStraps(event, 'RubberStraps')">RUBBER STRAPS</button>
+  </div>
+  
+  <div id="ChainStraps" class="tabcontent">
+      <script src = "sample.js"></script>
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+    <h3>CHAINSTRAPS</h3>
+   
+            <div class="column">
+              <img src="../Project/cwatch1.jpg"  style="width:90%" onclick="myFunction(imgs);">
+            </div>
+            <div class="column">
+              <img src="../Project/cwatch2.jpg"  style="width:50%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="../Project/cwatch3.jpg"  style="width:50%" onclick="myFunction(this);">
+            </div>
+        
+  </div>
+  
+
+  <div id="LeatherStraps" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+    <h3>LEATHERSTRAPS</h3>
+
+            <div class="column">
+              <img src="../Project/lwatch1.jpg"  style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="../Project/lwatch2.jpg"  style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="../Project/lwatch3.png"  style="width:65%" onclick="myFunction(this);">
+            </div> 
+  </div>
+  
+  <div id="RubberStraps" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+    <h3>RUBBERSTRAPS</h3>
+
+            <div class="column">
+              <img src="../Project/rwatch1.jpg"  style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="../Project/rwatch2.jpeg"  style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="../Project/rwatch3.jpg"  style="width:70%" onclick="myFunction(this);">
+            </div>
+            <div class="container">
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <img id="expandedImg" style="width:100%">
+                    <div id="imgtext"></div>
+                  </div>
+                  
+  </div>
+        <h4 id='date'></h4>
+    </body>
+    <script async src="sample.js"></script>
+    <style>
+
+        .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        }
+
+  
+        .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    content: "";
+    display: table;
+    clear: both;
+
+  }
+  .tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</html> -->
